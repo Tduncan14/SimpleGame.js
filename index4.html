@@ -5,13 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    
+   
+ <script type="text/javascript" src="simplegame.js"></script>
 </head>
 <body  onload = "init()">
 
-   
- <script src="simplegame.js"type="text/javascipt"></script>
+    
  <script type="text/javascript">
- 
- </script>
+    // making the variables global
+  
+    var scene;
+    var car;
+  
+    function init(){
+        scene = new Scene();
+        car = new Sprite(scene, "car.png", 50, 50);
+        car.setAngle(270);
+        car.setSpeed(0);
+        scene.start();
+    } // end init
+  
+  
+   function update (){
+        scene.clear();
+        // check the keys
+  
+        if(keysDown[K_LEFT]){
+            car.changeAngleBy(-5);
+        }
+  
+        if(keysDown[K_RIGHT]){
+            car.changeAngleBy(5);
+        }
+  
+        if(keysDown[K_UP]){
+            car.changingSpeedBy(1);
+  
+        }
+  
+        if(keysDown[K_DOWN]){
+             car.changeSpeedBy(-1);
+        }
+  
+          car.update();
+   }
+   </script>
 </body>
 </html>

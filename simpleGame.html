@@ -14,19 +14,17 @@
 
      function init(){
          scene = new Scene();
-         ball = new Sprite(scene, "redBall.png", 50, 50);
+         ball = new Sprite(scene, "car.png", 50, 50);
          ball.setMoveAngle(180);
          ball.setSpeed(3);
 
          scene.start();
-
      }
 
      function update(){
          scene.clear();
          ball.update();
      }
-
     </script>
  </body>
 </html>
