@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javscript" src="simplegame.js"></script>
+</head>
+<body onload="init()"> 
+
+    <div id="output">
+
+    </div>
+    
+    <script type="text/javascript">
+     var game;
+     var box;
+     var critter;
+     var output;
+
+     function init(){
+         game = new Scene();
+         game.hideCursor();
+         box = new Sprite(game,"simpleBox.png", 50, 50);
+         critter = new Sprite(game,"critter.png", 100,100);
+
+         output = document.getElementById("output");
+         // give box a fixed position
+         box.setPosition(200,150);
+         box.setSpeed();
+
+          // critter controlled by mouse
+     }
+
+     function update(){
+
+     }
+    </script>
+</body>
+</html>!
