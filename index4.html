@@ -40,11 +40,14 @@
         }
   
         if(keysDown[K_UP]){
+   
+            car.changeAngleBy(90);
             car.changingSpeedBy(1);
   
         }
   
         if(keysDown[K_DOWN]){
+             car.changeAngleBy(-90);
              car.changeSpeedBy(-1);
         }
   

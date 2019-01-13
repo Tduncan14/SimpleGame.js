@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="simplegame.js"></script>
+</head>
+<body onload="init()">
+    
+ <script>
+      var game;
+      var critter;
+      function Critter(){
+          tCritter = new Sprite(game, "critter.png", 100, 100);
+          tCritter.setSpeed(0);
+          tCritter.checkKeys = function (){
+              if(keysDown[K_RIGHT]){
+                  this.speed++;
+              }
+              if(keysDown[K_LEFT]){
+                  this.speed--;
+              }
+              tCritter.setSpeed(this.speed);
+          }
+          return tCritter;
+      }
+
+      function init(){
+          game = new Scene();
+          critter = new Critter();
+          game.start();
+      }
+
+     function update(){
+          game.clear();
+          critter.checkKeys();
+          critter.update();
+     }
+    </script>
+</body>
+</html>
