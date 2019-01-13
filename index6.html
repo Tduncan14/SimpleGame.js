@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script type="text/javscript" src="simplegame.js"></script>
+      <script type="text/javascript" src="simplegame.js"></script>
 </head>
 <body onload="init()"> 
 
@@ -22,12 +22,15 @@
      function init(){
          game = new Scene();
          game.hideCursor();
-         box = new Sprite(game,"simpleBox.png", 50, 50);
-         critter = new Sprite(game,"critter.png", 100,100);
-
+         
          output = document.getElementById("output");
+
+
+         box =new Sprite(game,"simpleBox.png", 50, 50);
+
+         critter= new Sprite(game,"critter.png", 100, 100)
          // give box a fixed position
-         box.setPosition(200,150);
+         box.setPosition(300, 300);
          box.setSpeed();
 
           // critter controlled by mouse
@@ -52,7 +55,10 @@
          if(box.collidesWith(critter)){
              output.innerHTML = "Collision";
          }
+         else{ output.innerHTML = "No collision";
+
+         }
      }
     </script>
 </body>
-</html>!
+</html>
