@@ -31,10 +31,27 @@
          box.setSpeed();
 
           // critter controlled by mouse
+          critter.setPosition(100,100);
+          critter.setSpeed(0);
+          critter.followMouse = function(){
+              this.setX(document.mouseX);
+              this.setY(document.mouseY);
+          } // emd  followmouse
+         game.start();
      }
 
      function update(){
+         game.clear();
+         critter.followMouse();
+         checkCollisions();
+         box.update();
+         critter.update();
+     }  // end Update
 
+     function checkCollisions(){
+         if(box.collidesWith(critter)){
+             output.innerHTML = "Collision";
+         }
      }
     </script>
 </body>
